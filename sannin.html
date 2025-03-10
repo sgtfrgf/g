@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Legendary Sannin - Three Ninja Legends</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #0a0a0a;
+            color: #fff;
+            position: relative;
+        }
+
+        .chakra-effect {
+            position: fixed;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            filter: blur(30px);
+            z-index: -1;
+            opacity: 0.3;
+            animation: pulse 4s infinite;
+        }
+
+        .jiraiya-chakra { background: radial-gradient(circle at center, #ff4444, transparent); }
+        .tsunade-chakra { background: radial-gradient(circle at center, #4CAF50, transparent); }
+        .orochimaru-chakra { background: radial-gradient(circle at center, #9C27B0, transparent); }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.2); opacity: 0.1; }
+            100% { transform: scale(1); opacity: 0.3; }
+        }
+
+        header {
+            background: linear-gradient(135deg, #1a1a1a, #333);
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://wallpapersmug.com/download/3840x2160/a62e40/the-legendary-sannin-art.jpg') center/cover;
+            opacity: 0.2;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .sannin-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .sannin-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .jiraiya-card { border: 1px solid rgba(255, 68, 68, 0.3); }
+        .tsunade-card { border: 1px solid rgba(76, 175, 80, 0.3); }
+        .orochimaru-card { border: 1px solid rgba(156, 39, 176, 0.3); }
+
+        .sannin-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        }
+
+        .sannin-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .sannin-info {
+            padding: 1.5rem;
+        }
+
+        .sannin-name {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 10px rgba(255,255,255,0.3);
+        }
+
+        .jiraiya-name { color: #ff4444; }
+        .tsunade-name { color: #4CAF50; }
+        .orochimaru-name { color: #9C27B0; }
+
+        .sannin-title {
+            color: #ccc;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .stat {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.8rem;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .abilities {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .abilities li {
+            margin-bottom: 0.8rem;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .abilities li::before {
+            content: "⚡";
+            position: absolute;
+            left: 0;
+        }
+
+        .jiraiya-abilities li::before { color: #ff4444; }
+        .tsunade-abilities li::before { color: #4CAF50; }
+        .orochimaru-abilities li::before { color: #9C27B0; }
+
+        .legacy {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .back-to-home {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(135deg, #333, #1a1a1a);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            margin: 1rem 0;
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .back-to-home:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            background: linear-gradient(135deg, #1a1a1a, #333);
+            color: white;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        @media (max-width: 768px) {
+            .sannin-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="chakra-effect jiraiya-chakra" style="top: 20%; left: 10%;"></div>
+    <div class="chakra-effect tsunade-chakra" style="top: 60%; right: 15%;"></div>
+    <div class="chakra-effect orochimaru-chakra" style="bottom: 10%; left: 30%;"></div>
+
+    <header>
+        <div class="header-bg"></div>
+        <div class="container">
+            <h1>The Legendary Sannin</h1>
+            <p>Three of the Most Powerful Shinobi in History</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <a href="index.html" class="back-to-home">← Back to Characters</a>
+
+        <div class="sannin-grid">
+            <!-- Jiraiya -->
+            <div class="sannin-card jiraiya-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSt201c08gbIT0g5ut_6sVxaQBfEETNzGjAqQ&s" alt="Jiraiya" class="sannin-image">
+                <div class="sannin-info">
+                    <h2 class="sannin-name jiraiya-name">Jiraiya</h2>
+                    <p class="sannin-title">The Toad Sage</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <strong>Status</strong>
+                            <p>Deceased</p>
+                        </div>
+                        <div class="stat">
+                            <strong>Affiliation</strong>
+                            <p>Hidden Leaf</p>
+                        </div>
+                    </div>
+                    <ul class="abilities jiraiya-abilities">
+                        <li>Sage Mode</li>
+                        <li>Rasengan</li>
+                        <li>Toad Summoning</li>
+                        <li>Hair Needle Senbon</li>
+                        <li>Master of Espionage</li>
+                    </ul>
+                    <div class="legacy">
+                        <p>A legendary shinobi known for his sage abilities and being Naruto's godfather and mentor. Sacrificed his life investigating Pain, leaving behind a legacy of determination and loyalty.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tsunade -->
+            <div class="sannin-card tsunade-card">
+                <img src="data:image/webp;base64,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" alt="Tsunade" class="sannin-image">
+                <div class="sannin-info">
+                    <h2 class="sannin-name tsunade-name">Tsunade</h2>
+                    <p class="sannin-title">The Legendary Healer</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <strong>Status</strong>
+                            <p>Alive</p>
+                        </div>
+                        <div class="stat">
+                            <strong>Position</strong>
+                            <p>Fifth Hokage</p>
+                        </div>
+                    </div>
+                    <ul class="abilities tsunade-abilities">
+                        <li>Superhuman Strength</li>
+                        <li>Creation Rebirth</li>
+                        <li>Master Medical Ninjutsu</li>
+                        <li>Summoning: Katsuyu</li>
+                        <li>Mitotic Regeneration</li>
+                    </ul>
+                    <div class="legacy">
+                        <p>Granddaughter of the First Hokage and the greatest medical-nin in history. Revolutionized medical ninja practices and served as the Fifth Hokage, leading the village through critical times.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Orochimaru -->
+            <div class="sannin-card orochimaru-card">
+                <img src="data:image/jpeg;base64,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" alt="Orochimaru" class="sannin-image">
+                <div class="sannin-info">
+                    <h2 class="sannin-name orochimaru-name">Orochimaru</h2>
+                    <p class="sannin-title">The Immortal Snake</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <strong>Status</strong>
+                            <p>Alive</p>
+                        </div>
+                        <div class="stat">
+                            <strong>Affiliation</strong>
+                            <p>Independent</p>
+                        </div>
+                    </div>
+                    <ul class="abilities orochimaru-abilities">
+                        <li>Living Corpse Reincarnation</li>
+                        <li>Snake Techniques</li>
+                        <li>Curse Mark Creation</li>
+                        <li>Regeneration Abilities</li>
+                        <li>Forbidden Jutsu Master</li>
+                    </ul>
+                    <div class="legacy">
+                        <p>A genius shinobi who strayed from the path in pursuit of immortality and forbidden knowledge. Later reformed and now conducts research while maintaining a complex relationship with the Hidden Leaf.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>developed by <b><u>master shresth kumar sharma</u></b></p>
+        </div>
+    </footer>
+
+    <script>
+        // Add floating chakra effect
+        document.addEventListener('mousemove', (e) => {
+            const effects = document.querySelectorAll('.chakra-effect');
+            effects.forEach((effect, index) => {
+                const speed = 0.05 - (index * 0.01);
+                const x = e.clientX * speed;
+                const y = e.clientY * speed;
+                effect.style.transform = `translate(${x}px, ${y}px)`;
+            });
+        });
+    </script>
+</body>
+</html> 

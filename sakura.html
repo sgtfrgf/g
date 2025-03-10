@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakura Haruno - The Legendary Medical Ninja</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #fff5f5;
+            color: #333;
+            position: relative;
+        }
+
+        .cherry-blossom {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background-color: #ffb7c5;
+            clip-path: polygon(50% 0%, 80% 30%, 100% 50%, 80% 70%, 50% 100%, 20% 70%, 0% 50%, 20% 30%);
+            animation: fall 10s linear infinite;
+            opacity: 0.6;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-10vh) rotate(0deg);
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+            }
+        }
+
+        header {
+            background: linear-gradient(135deg, #ff99cc, #ff6b88);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-image {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 2rem 0;
+            border: 5px solid #fff;
+            box-shadow: 0 0 20px rgba(255,182,193,0.3);
+        }
+
+        .section {
+            background-color: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border: 1px solid #ffe6e6;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            color: #ff6b88;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #ffb7c5;
+            padding-bottom: 0.5rem;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .stat-box {
+            background-color: #fff5f5;
+            padding: 1rem;
+            border-radius: 5px;
+            text-align: center;
+            border: 1px solid #ffe6e6;
+        }
+
+        .abilities {
+            list-style: none;
+        }
+
+        .abilities li {
+            margin-bottom: 0.5rem;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .abilities li::before {
+            content: "✿";
+            color: #ff6b88;
+            position: absolute;
+            left: 0;
+        }
+
+        .quote {
+            font-style: italic;
+            color: #ff6b88;
+            text-align: center;
+            padding: 1rem;
+            background-color: #fff5f5;
+            border-radius: 5px;
+            margin: 1rem 0;
+            border: 1px solid #ffe6e6;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline-item {
+            padding: 15px;
+            margin-bottom: 15px;
+            border-left: 3px solid #ff6b88;
+            background-color: #fff5f5;
+        }
+
+        .skill-level {
+            display: flex;
+            align-items: center;
+            margin: 0.5rem 0;
+        }
+
+        .skill-bar {
+            flex-grow: 1;
+            height: 10px;
+            background: #ffe6e6;
+            border-radius: 5px;
+            margin-left: 10px;
+            overflow: hidden;
+        }
+
+        .skill-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ff6b88, #ff99cc);
+            width: var(--fill-width);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            background: linear-gradient(135deg, #ff99cc, #ff6b88);
+            color: white;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // Create cherry blossoms
+        for (let i = 0; i < 20; i++) {
+            const blossom = document.createElement('div');
+            blossom.className = 'cherry-blossom';
+            blossom.style.left = Math.random() * 100 + 'vw';
+            blossom.style.animationDelay = Math.random() * 10 + 's';
+            document.body.appendChild(blossom);
+        }
+    </script>
+
+    <header>
+        <div class="container">
+            <h1>Sakura Haruno</h1>
+            <p>The Legendary Medical Ninja of the Hidden Leaf</p>
+            <img src="https://miro.medium.com/v2/resize:fit:1400/1*RDY_6oxE1mUMgqCpIsREag.png" alt="Sakura Haruno" class="hero-image">
+            <div class="quote">
+                "I've always considered myself to be a true ninja... but those were just empty words. Now I know what it means to be strong, like Lady Tsunade."
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="section">
+            <h2>Profile</h2>
+            <div class="stats">
+                <div class="stat-box">
+                    <h3>Rank</h3>
+                    <p>Jōnin</p>
+                </div>
+                <div class="stat-box">
+                    <h3>Age</h3>
+                    <p>12-17 (Original)</p>
+                    <p>32+ (Boruto Era)</p>
+                </div>
+                <div class="stat-box">
+                    <h3>Birthday</h3>
+                    <p>March 28</p>
+                </div>
+                <div class="stat-box">
+                    <h3>Occupation</h3>
+                    <p>Head Medical Ninja</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Background</h2>
+            <p>Sakura Haruno started as a young kunoichi with a crush on Sasuke Uchiha and little ninja ability. Through hard work and determination, she became one of the most powerful medical ninja in history, surpassing even her mentor Tsunade. Her incredible chakra control and medical expertise made her an invaluable asset during the Fourth Great Ninja War and beyond.</p>
+        </section>
+
+        <section class="section">
+            <h2>Skills & Expertise</h2>
+            <div class="skill-level">
+                <span>Medical Ninjutsu</span>
+                <div class="skill-bar">
+                    <div class="skill-fill" style="--fill-width: 100%"></div>
+                </div>
+            </div>
+            <div class="skill-level">
+                <span>Chakra Control</span>
+                <div class="skill-bar">
+                    <div class="skill-fill" style="--fill-width: 100%"></div>
+                </div>
+            </div>
+            <div class="skill-level">
+                <span>Super Strength</span>
+                <div class="skill-bar">
+                    <div class="skill-fill" style="--fill-width: 95%"></div>
+                </div>
+            </div>
+            <div class="skill-level">
+                <span>Genjutsu</span>
+                <div class="skill-bar">
+                    <div class="skill-fill" style="--fill-width: 85%"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Key Abilities</h2>
+            <ul class="abilities">
+                <li>Strength of a Hundred Seal</li>
+                <li>Mystical Palm Technique</li>
+                <li>Creation Rebirth</li>
+                <li>Chakra Enhanced Strength</li>
+                <li>Advanced Medical Ninjutsu</li>
+                <li>Poison Extraction</li>
+                <li>Perfect Chakra Control</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Major Achievements</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Tsunade's Apprentice</h3>
+                    <p>Became the second apprentice of the legendary Sannin Tsunade</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Sasori's Defeat</h3>
+                    <p>Defeated Sasori of the Red Sand alongside Lady Chiyo</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Fourth Great Ninja War</h3>
+                    <p>Played a crucial role as a medical ninja and frontline fighter</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Konoha Hospital Director</h3>
+                    <p>Became the director of Konoha Hospital and leading medical expert</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Relationships</h2>
+            <ul class="abilities">
+                <li>Husband: Sasuke Uchiha</li>
+                <li>Daughter: Sarada Uchiha</li>
+                <li>Mentor: Tsunade</li>
+                <li>Best Friend: Ino Yamanaka</li>
+                <li>Team 7 Members: Naruto Uzumaki, Sasuke Uchiha, Kakashi Hatake</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <P>developed by <b><u>master shresth kumar sharma</u></b></p>
+        </div>
+    </footer>
+</body>
+</html> 

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Uchiha Clan - Noble Warriors of the Hidden Leaf</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #1a1a1a, #2c3e50);
+            color: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 0;
+            background: rgba(0, 0, 0, 0.5);
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #ff3333;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .clan-symbol {
+            width: 150px;
+            height: 150px;
+            margin: 20px auto;
+            background: url('data:image/png;base64,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') no-repeat center;
+            background-size: contain;
+        }
+
+        .section {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            color: #ff3333;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ff3333;
+            padding-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .member-card {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .member-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .member-image {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        .sharingan-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .sharingan-type {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .sharingan-image {
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .abilities-list {
+            list-style: none;
+        }
+
+        .abilities-list li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .abilities-list li::before {
+            content: "•";
+            color: #ff3333;
+            position: absolute;
+            left: 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>The Uchiha Clan</h1>
+        <div class="clan-symbol"></div>
+        <p>One of the noble founding clans of Konohagakure</p>
+    </header>
+
+    <div class="container">
+        <section class="section">
+            <h2>History</h2>
+            <p>The Uchiha clan was one of the most powerful and renowned clans of Konohagakure. They were known for their exceptional ninja abilities and their unique Kekkei Genkai, the Sharingan. The clan descended from Indra Ōtsutsuki, the elder son of the Sage of Six Paths.</p>
+            <p>Founded by Madara Uchiha alongside Hashirama Senju, the Uchiha clan helped establish Konohagakure and played a crucial role in shaping the ninja world. However, their history is marked by both great achievements and tragic events, including the infamous Uchiha clan massacre.</p>
+        </section>
+
+        <section class="section">
+            <h2>The Sharingan</h2>
+            <p>The Sharingan is the Uchiha clan's most famous and powerful ability. This unique dōjutsu manifests in times of emotional stress and grants the user various abilities:</p>
+            <div class="sharingan-grid">
+                <div class="sharingan-type">
+                    
+                    <h3>Basic Sharingan</h3>
+                    <p>Allows the user to see chakra, predict movements, and copy techniques</p>
+                </div>
+                <div class="sharingan-type">
+
+                    <h3>Mangekyo Sharingan</h3>
+                    <p>Advanced form with unique abilities like Amaterasu and Tsukuyomi</p>
+                </div>
+                <div class="sharingan-type">
+                    
+                    <h3>Eternal Mangekyo Sharingan</h3>
+                    <p>Ultimate form that prevents blindness and enhances abilities</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Notable Members</h2>
+            <div class="members-grid">
+                <div class="member-card">
+                    
+                    <h3>Madara Uchiha</h3>
+                    <p>Co-founder of Konohagakure and one of the most powerful shinobi in history</p>
+                </div>
+                <div class="member-card">
+                    
+                    <h3>Sasuke Uchiha</h3>
+                    <p>One of the last surviving Uchiha and a key figure in the Fourth Great Ninja War</p>
+                </div>
+                <div class="member-card">
+                    
+                    <h3>Itachi Uchiha</h3>
+                    <p>Legendary shinobi known for his exceptional abilities and complex legacy</p>
+                </div>
+                <div class="member-card">
+                    
+                    <h3>Obito Uchiha</h3>
+                    <p>Known as Tobi and played a crucial role in the Fourth Great Ninja War</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Clan Abilities</h2>
+            <ul class="abilities-list">
+                <li>Exceptional chakra control and natural affinity for Fire Release techniques</li>
+                <li>Mastery of the Fire Release: Great Fireball Technique</li>
+                <li>Enhanced visual prowess through the Sharingan</li>
+                <li>Ability to perform powerful genjutsu</li>
+                <li>Natural combat aptitude and strategic thinking</li>
+                <li>Potential to awaken the Mangekyo Sharingan through emotional trauma</li>
+                <li>Access to powerful techniques like Susanoo, Amaterasu, and Tsukuyomi</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Legacy</h2>
+            <p>Despite their tragic history, the Uchiha clan's legacy lives on through Sasuke Uchiha and his descendants. Their contributions to the ninja world, particularly their role in founding Konohagakure and their unique abilities, have left an indelible mark on shinobi history.</p>
+            <p>The clan's story serves as a reminder of the complexities of power, loyalty, and the importance of breaking the cycle of hatred that plagued their history.</p>
+        </section>
+    </div>
+
+    <script>
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add hover effect for member cards
+        document.querySelectorAll('.member-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+                this.style.boxShadow = '0 10px 20px rgba(0,0,0,0.4)';
+            });
+
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 5px 15px rgba(0,0,0,0.3)';
+            });
+        });
+    </script>
+</body>
+</html> 

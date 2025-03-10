@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asura Otsutsuki - The Younger Son of the Sage</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #1a1a1a, #2c3e50);
+            color: white;
+            min-height: 100vh;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.5);
+            text-align: center;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .profile-section {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+        }
+
+        .profile-image {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .profile-info h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #3498db;
+        }
+
+        .info-section {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .info-section h2 {
+            color: #3498db;
+            margin-bottom: 1rem;
+        }
+
+        .abilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .ability-card {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1rem;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .ability-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .back-button:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .profile-section {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .chakra-orb {
+            position: fixed;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle at center, rgba(52, 152, 219, 0.3), transparent);
+            border-radius: 50%;
+            filter: blur(20px);
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <div class="chakra-orb" style="top: 20%; left: 10%;"></div>
+    <div class="chakra-orb" style="top: 60%; right: 15%;"></div>
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="back-button">← Back to Characters</a>
+            <h1>Asura Otsutsuki</h1>
+            <p>The Younger Son of the Sage of Six Paths</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="profile-section">
+            <img src="data:image/jpeg;base64,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" alt class="profile-image">
+            <div class="profile-info">
+                <h1>Asura Otsutsuki</h1>
+                <p>The younger son of Hagoromo Otsutsuki, Asura was born with no natural talent but through hard work and cooperation with others, he gained power that rivaled his brother Indra. He is considered the ancestor of the Senju clan and the originator of the Will of Fire.</p>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h2>Background</h2>
+            <p>Unlike his naturally gifted elder brother Indra, Asura had to struggle to achieve his goals. Initially lacking any natural talents, he worked diligently and learned the value of cooperation and friendship. Through his determination and the bonds he formed with others, he eventually awakened his own powerful chakra and unique abilities. His father, Hagoromo, ultimately chose him as his successor, recognizing that true peace could only be achieved through love and cooperation rather than power alone.</p>
+        </div>
+
+        <div class="info-section">
+            <h2>Abilities</h2>
+            <div class="abilities-grid">
+                <div class="ability-card">
+                    <h3>Avatar Mode</h3>
+                    <p>Could manifest a giant, three-headed, six-armed avatar using his chakra</p>
+                </div>
+                <div class="ability-card">
+                    <h3>Enhanced Chakra</h3>
+                    <p>Developed powerful chakra through hard work and determination</p>
+                </div>
+                <div class="ability-card">
+                    <h3>Body Enhancement</h3>
+                    <p>Could enhance his physical capabilities with chakra</p>
+                </div>
+                <div class="ability-card">
+                    <h3>Leadership</h3>
+                    <p>Natural ability to bring people together and inspire cooperation</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h2>Legacy</h2>
+            <p>Asura's legacy lives on through the Senju clan and the Will of Fire philosophy that became central to the Hidden Leaf Village. His ideals of cooperation, love, and understanding as the path to peace continue to influence shinobi through his reincarnations, including Hashirama Senju and Naruto Uzumaki. The conflict between his philosophy and Indra's belief in power created a cycle of reincarnation that shaped the ninja world for generations.</p>
+        </div>
+
+        <div class="info-section">
+            <h2>Relationships</h2>
+            <ul>
+                <li><strong>Hagoromo Otsutsuki (Father)</strong> - The Sage of Six Paths who chose him as his successor</li>
+                <li><strong>Indra Otsutsuki (Brother)</strong> - His elder brother and eternal rival</li>
+                <li><strong>Senju Clan</strong> - His descendants who inherited his strong life force and ideals</li>
+            </ul>
+        </div>
+    </main>
+
+    <script>
+        // Add floating chakra orb effect
+        document.addEventListener('mousemove', (e) => {
+            const orbs = document.querySelectorAll('.chakra-orb');
+            orbs.forEach((orb, index) => {
+                const speed = 0.05 - (index * 0.01);
+                const rect = orb.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+                const deltaX = (e.clientX - centerX) * speed;
+                const deltaY = (e.clientY - centerY) * speed;
+                
+                orb.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
+                orb.style.filter = `blur(${20 + Math.abs(deltaX + deltaY) / 50}px)`;
+            });
+        });
+
+        // Add smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

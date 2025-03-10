@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naruto Uzumaki - The Seventh Hokage</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #fff5e6;
+            color: #333;
+            position: relative;
+        }
+
+        .rasengan {
+            position: fixed;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle at center, rgba(66, 134, 244, 0.1), transparent);
+            border-radius: 50%;
+            filter: blur(20px);
+            z-index: -1;
+            animation: spin 10s linear infinite;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        header {
+            background: linear-gradient(135deg, #ff9933, #ff6600);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-image {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 2rem 0;
+            border: 5px solid #fff;
+            box-shadow: 0 0 20px rgba(255,153,51,0.3);
+        }
+
+        .section {
+            background-color: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border: 1px solid #ffe6cc;
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            color: #ff6600;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #ff9933;
+            padding-bottom: 0.5rem;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .stat-box {
+            background-color: #fff5e6;
+            padding: 1rem;
+            border-radius: 5px;
+            text-align: center;
+            border: 1px solid #ffe6cc;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-box:hover {
+            transform: scale(1.05);
+        }
+
+        .abilities {
+            list-style: none;
+        }
+
+        .abilities li {
+            margin-bottom: 0.5rem;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .abilities li::before {
+            content: "✦";
+            color: #ff6600;
+            position: absolute;
+            left: 0;
+        }
+
+        .quote {
+            font-style: italic;
+            color: #ff6600;
+            text-align: center;
+            padding: 1rem;
+            background-color: #fff5e6;
+            border-radius: 5px;
+            margin: 1rem 0;
+            border: 1px solid #ffe6cc;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline-item {
+            padding: 15px;
+            margin-bottom: 15px;
+            border-left: 3px solid #ff6600;
+            background-color: #fff5e6;
+            transition: transform 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(10px);
+        }
+
+        .power-level {
+            display: flex;
+            align-items: center;
+            margin: 0.5rem 0;
+        }
+
+        .power-bar {
+            flex-grow: 1;
+            height: 10px;
+            background: #ffe6cc;
+            border-radius: 5px;
+            margin-left: 10px;
+            overflow: hidden;
+        }
+
+        .power-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ff6600, #ff9933);
+            width: var(--fill-width);
+            animation: fillAnimation 1s ease-out;
+        }
+
+        @keyframes fillAnimation {
+            from {
+                width: 0;
+            }
+            to {
+                width: var(--fill-width);
+            }
+        }
+
+        .back-to-home {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(135deg, #ff6600, #ff9933);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            margin: 1rem 0;
+            transition: transform 0.3s ease;
+        }
+
+        .back-to-home:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            background: linear-gradient(135deg, #ff9933, #ff6600);
+            color: white;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="rasengan" style="top: 20%; left: 10%;"></div>
+    <div class="rasengan" style="top: 60%; right: 15%;"></div>
+    <div class="rasengan" style="bottom: 10%; left: 30%;"></div>
+
+    <header>
+        <div class="container">
+            <h1>Naruto Uzumaki</h1>
+            <p>The Seventh Hokage of the Hidden Leaf Village</p>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtLHK481A1RmVRd2dvubjkDPwvjdApLlWrbHdRJKpJW8IsuYQwSlKEjRY&s" alt="Naruto Uzumaki" class="hero-image">
+            <div class="quote">
+                "I'm not gonna run away, I never go back on my word! That's my nindo: my ninja way!"
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <a href="index.html" class="back-to-home">← Back to Characters</a>
+
+        <section class="section">
+            <h2>Profile</h2>
+            <div class="stats">
+                <div class="stat-box">
+                    <h3>Rank</h3>
+                    <p>7th Hokage</p>
+                </div>
+                <div class="stat-box">
+                    <h3>Age</h3>
+                    <p>12-17 (Original)</p>
+                    <p>32+ (Boruto Era)</p>
+                </div>
+                <div class="stat-box">
+                    <h3>Birthday</h3>
+                    <p>October 10</p>
+                </div>
+                <div class="stat-box">
+                    <h3>Clan</h3>
+                    <p>Uzumaki</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Background</h2>
+            <p>Naruto Uzumaki is the son of the Fourth Hokage, Minato Namikaze, and Kushina Uzumaki. Born with the Nine-Tailed Fox sealed within him, Naruto faced a childhood of loneliness and rejection. Through his unwavering determination and belief in himself, he achieved his dream of becoming Hokage and gained the acknowledgment of everyone in his village.</p>
+        </section>
+
+        <section class="section">
+            <h2>Power Levels</h2>
+            <div class="power-level">
+                <span>Nine-Tails Chakra</span>
+                <div class="power-bar">
+                    <div class="power-fill" style="--fill-width: 100%"></div>
+                </div>
+            </div>
+            <div class="power-level">
+                <span>Sage Mode</span>
+                <div class="power-bar">
+                    <div class="power-fill" style="--fill-width: 95%"></div>
+                </div>
+            </div>
+            <div class="power-level">
+                <span>Rasengan</span>
+                <div class="power-bar">
+                    <div class="power-fill" style="--fill-width: 100%"></div>
+                </div>
+            </div>
+            <div class="power-level">
+                <span>Shadow Clone Jutsu</span>
+                <div class="power-bar">
+                    <div class="power-fill" style="--fill-width: 100%"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Key Abilities</h2>
+            <ul class="abilities">
+                <li>Massive Chakra Reserves</li>
+                <li>Shadow Clone Jutsu</li>
+                <li>Rasengan and its variations</li>
+                <li>Sage Mode</li>
+                <li>Nine-Tails Chakra Mode</li>
+                <li>Six Paths Sage Mode</li>
+                <li>Tailed Beast Mode</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Major Achievements</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Mastered Shadow Clone Jutsu</h3>
+                    <p>Learned and mastered the technique in one night</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Defeated Pain</h3>
+                    <p>Saved the village and gained everyone's acknowledgment</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Fourth Great Ninja War</h3>
+                    <p>Played a crucial role in winning the war and defeating Kaguya</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Seventh Hokage</h3>
+                    <p>Achieved his lifelong dream of becoming Hokage</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Relationships</h2>
+            <ul class="abilities">
+                <li>Wife: Hinata Hyuga</li>
+                <li>Children: Boruto and Himawari</li>
+                <li>Parents: Minato Namikaze and Kushina Uzumaki</li>
+                <li>Mentor: Kakashi Hatake, Jiraiya</li>
+                <li>Best Friend/Rival: Sasuke Uchiha</li>
+                <li>Team 7: Sakura Haruno, Sasuke Uchiha, Kakashi Hatake</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>developed by <b><u>master shresth kumar sharma</p>
+        </div>
+    </footer>
+
+    <script>
+        // Add spinning rasengan effect
+        document.addEventListener('mousemove', (e) => {
+            const rasengans = document.querySelectorAll('.rasengan');
+            rasengans.forEach((rasengan, index) => {
+                const speed = 0.05 - (index * 0.01);
+                const x = e.clientX * speed;
+                const y = e.clientY * speed;
+                rasengan.style.transform = `translate(${x}px, ${y}px) rotate(${Date.now() * 0.1}deg)`;
+            });
+        });
+    </script>
+</body>
+</html> 

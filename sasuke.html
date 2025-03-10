@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sasuke Uchiha - The Last Uchiha</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1a1a1a, #4a0404);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sharingan-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            background: repeating-radial-gradient(
+                circle at center,
+                #ff0000 0,
+                #000000 2px,
+                transparent 3px,
+                transparent 15px
+            );
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .hero-image {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 2rem 0;
+            border: 5px solid #4a0404;
+            box-shadow: 0 0 20px rgba(255,0,0,0.2);
+        }
+
+        .section {
+            background-color: #2a2a2a;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            border: 1px solid #333;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        h2 {
+            color: #cc0000;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #4a0404;
+            padding-bottom: 0.5rem;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .stat-box {
+            background-color: #1a1a1a;
+            padding: 1rem;
+            border-radius: 5px;
+            text-align: center;
+            border: 1px solid #333;
+        }
+
+        .abilities {
+            list-style: none;
+        }
+
+        .abilities li {
+            margin-bottom: 0.5rem;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .abilities li::before {
+            content: "⚔";
+            color: #cc0000;
+            position: absolute;
+            left: 0;
+        }
+
+        .quote {
+            font-style: italic;
+            color: #cc0000;
+            text-align: center;
+            padding: 1rem;
+            background-color: #1a1a1a;
+            border-radius: 5px;
+            margin: 1rem 0;
+            border: 1px solid #333;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline-item {
+            padding: 15px;
+            margin-bottom: 15px;
+            border-left: 3px solid #cc0000;
+            background-color: #1a1a1a;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            background: linear-gradient(135deg, #1a1a1a, #4a0404);
+            color: white;
+            margin-top: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .power-level {
+            display: flex;
+            align-items: center;
+            margin: 0.5rem 0;
+        }
+
+        .power-bar {
+            flex-grow: 1;
+            height: 10px;
+            background: #333;
+            border-radius: 5px;
+            margin-left: 10px;
+            overflow: hidden;
+        }
+
+        .power-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #cc0000, #ff0000);
+            width: var(--fill-width);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="sharingan-pattern"></div>
+        <div class="container">
+            <h1>Sasuke Uchiha</h1>
+            <p>The Last Survivor of the Uchiha Clan</p>
+            <img src="https://motionbgs.com/media/1192/sasuke-lightning-jutsu.jpg" alt="Sasuke Uchiha" class="hero-image">
+            <div class="quote">
+                "I will restore my clan, and destroy a certain someone."
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="section">
+            <h2>Profile</h2>
+            <div class="stats">
+                <div class="stat-box">
+                    <h3>Rank</h3>
+                    <p>Shadow Hokage</p>
+                </div>
+                <div class="stat-box">
+                    <h3>Age</h3>
+                    <p>12-17 (Original)</p>
+                    <p>32+ (Boruto Era)</p>
+                </div>
+                <div class="stat-box">
+                    <h3>Birthday</h3>
+                    <p>July 23</p>
+                </div>
+                <div class="stat-box">
+                    <h3>Clan</h3>
+                    <p>Uchiha</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Background</h2>
+            <p>Sasuke Uchiha is the last surviving member of Konohagakure's Uchiha clan. After his older brother, Itachi, slaughtered their clan, Sasuke made it his mission to avenge them by killing Itachi. He later discovered the truth about his brother's sacrifice and, after many trials and conflicts, eventually became a powerful ally of Konoha and Naruto's closest friend.</p>
+        </section>
+
+        <section class="section">
+            <h2>Power Levels</h2>
+            <div class="power-level">
+                <span>Ninjutsu</span>
+                <div class="power-bar">
+                    <div class="power-fill" style="--fill-width: 98%"></div>
+                </div>
+            </div>
+            <div class="power-level">
+                <span>Genjutsu</span>
+                <div class="power-bar">
+                    <div class="power-fill" style="--fill-width: 95%"></div>
+                </div>
+            </div>
+            <div class="power-level">
+                <span>Taijutsu</span>
+                <div class="power-bar">
+                    <div class="power-fill" style="--fill-width: 90%"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Key Abilities</h2>
+            <ul class="abilities">
+                <li>Sharingan & Mangekyō Sharingan</li>
+                <li>Rinnegan</li>
+                <li>Chidori & its variations</li>
+                <li>Amaterasu</li>
+                <li>Susanoo</li>
+                <li>Fire Style Jutsu</li>
+                <li>Space-Time Ninjutsu</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Major Events</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Uchiha Massacre</h3>
+                    <p>Witnessed the death of his clan at the hands of his brother</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Leaving the Village</h3>
+                    <p>Left Konoha to seek power from Orochimaru</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Battle with Itachi</h3>
+                    <p>Finally confronted and defeated his brother</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Fourth Great Ninja War</h3>
+                    <p>Fought alongside Naruto to save the world</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Shadow Hokage</h3>
+                    <p>Became Konoha's guardian in the shadows</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Relationships</h2>
+            <ul class="abilities">
+                <li>Best Friend/Rival: Naruto Uzumaki</li>
+                <li>Wife: Sakura Haruno</li>
+                <li>Daughter: Sarada Uchiha</li>
+                <li>Brother: Itachi Uchiha</li>
+                <li>Mentor: Kakashi Hatake, Orochimaru</li>
+                <li>Team 7 Members: Naruto Uzumaki, Sakura Haruno</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <div class="sharingan-pattern"></div>
+        <div class="container">
+            <p>developed by <b><u>master shresth kumar sharma</u></b></p>
+        </div>
+    </footer>
+</body>
+</html> 

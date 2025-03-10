@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Hokage Legacy - Leaders of the Hidden Leaf</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f5f5f5;
+            color: #333;
+            position: relative;
+        }
+
+        .fire-symbol {
+            position: fixed;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle at center, rgba(255, 69, 0, 0.1), transparent);
+            border-radius: 50%;
+            filter: blur(20px);
+            z-index: -1;
+            animation: pulse 4s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.2); opacity: 0.1; }
+            100% { transform: scale(1); opacity: 0.3; }
+        }
+
+        header {
+            background: linear-gradient(135deg, #d32f2f, #ff7043);
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hokage-symbol {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 12rem;
+            opacity: 0.1;
+            color: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hokage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .hokage-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hokage-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .hokage-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .hokage-info {
+            padding: 1.5rem;
+        }
+
+        .hokage-name {
+            font-size: 1.8rem;
+            color: #d32f2f;
+            margin-bottom: 0.5rem;
+        }
+
+        .hokage-title {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .hokage-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+
+        .stat {
+            background: #f5f5f5;
+            padding: 0.5rem;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .abilities {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .abilities li {
+            margin-bottom: 0.5rem;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .abilities li::before {
+            content: "火";
+            color: #d32f2f;
+            position: absolute;
+            left: 0;
+            font-size: 0.8rem;
+        }
+
+        .legacy {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+
+        .back-to-home {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(135deg, #d32f2f, #ff7043);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            margin: 1rem 0;
+            transition: transform 0.3s ease;
+        }
+
+        .back-to-home:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            background: linear-gradient(135deg, #d32f2f, #ff7043);
+            color: white;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .hokage-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="fire-symbol" style="top: 20%; left: 10%;"></div>
+    <div class="fire-symbol" style="top: 60%; right: 15%;"></div>
+    <div class="fire-symbol" style="bottom: 10%; left: 30%;"></div>
+
+    <header>
+        <div class="hokage-symbol">火</div>
+        <div class="container">
+            <h1>The Hokage Legacy</h1>
+            <p>The Leaders Who Shaped the Hidden Leaf Village</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <a href="index.html" class="back-to-home">← Back to Characters</a>
+
+        <div class="hokage-grid">
+            <!-- First Hokage -->
+            <div class="hokage-card">
+
+                <img src="https://miro.medium.com/v2/resize:fit:1200/1*X2g32XQF5boSEUyc9h5ATg.jpeg" alt="Hashirama Senju" class="hokage-image">
+                <div class="hokage-info">
+                    <h2 class="hokage-name">Hashirama Senju</h2>
+                    <p class="hokage-title">First Hokage (初代目火影)</p>
+                    <div class="hokage-stats">
+                        <div class="stat">
+                            <strong>Era</strong>
+                            <p>Village Founding</p>
+                        </div>
+                        <div class="stat">
+                            <strong>Status</strong>
+                            <p>Deceased</p>
+                        </div>
+                    </div>
+                    <ul class="abilities">
+                        <li>Wood Release Kekkei Genkai</li>
+                        <li>Sage Mode</li>
+                        <li>Exceptional Life Force</li>
+                        <li>Master of All Five Nature Transformations</li>
+                    </ul>
+                    <div class="legacy">
+                        <p>Founded the Hidden Leaf Village alongside Madara Uchiha. Known as the "God of Shinobi" for his unrivaled power and the unique Wood Release ability.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second Hokage -->
+            <div class="hokage-card">
+                <img src="data:image/jpeg;base64,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" alt="Tobirama Senju" class="hokage-image">
+                <div class="hokage-info">
+                    <h2 class="hokage-name">Tobirama Senju</h2>
+                    <p class="hokage-title">Second Hokage (二代目火影)</p>
+                    <div class="hokage-stats">
+                        <div class="stat">
+                            <strong>Era</strong>
+                            <p>Village Development</p>
+                        </div>
+                        <div class="stat">
+                            <strong>Status</strong>
+                            <p>Deceased</p>
+                        </div>
+                    </div>
+                    <ul class="abilities">
+                        <li>Flying Thunder God Technique Creator</li>
+                        <li>Shadow Clone Jutsu Creator</li>
+                        <li>Water Release Master</li>
+                        <li>Sensor Type Ninja</li>
+                    </ul>
+                    <div class="legacy">
+                        <p>Established many of the village's institutions and developed numerous jutsu. Known for his strategic mind and creating the foundation of the modern ninja system.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Third Hokage -->
+            <div class="hokage-card">
+                <img src="data:image/jpeg;base64,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" alt="Hiruzen Sarutobi" class="hokage-image">
+                <div class="hokage-info">
+                    <h2 class="hokage-name">Hiruzen Sarutobi</h2>
+                    <p class="hokage-title">Third Hokage (三代目火影)</p>
+                    <div class="hokage-stats">
+                        <div class="stat">
+                            <strong>Era</strong>
+                            <p>Longest Serving</p>
+                        </div>
+                        <div class="stat">
+                            <strong>Status</strong>
+                            <p>Deceased</p>
+                        </div>
+                    </div>
+                    <ul class="abilities">
+                        <li>Mastery of All Basic Nature Types</li>
+                        <li>Proficient in Over 1000 Jutsu</li>
+                        <li>Summoning: Monkey King Enma</li>
+                        <li>Expert in Both Armed and Unarmed Combat</li>
+                    </ul>
+                    <div class="legacy">
+                        <p>Known as "The Professor" for his vast knowledge of jutsu. Led the village through multiple wars and trained the legendary Sannin.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fourth Hokage -->
+            <div class="hokage-card">
+                <img src="data:image/webp;base64,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" alt="Minato Namikaze" class="hokage-image">
+                <div class="hokage-info">
+                    <h2 class="hokage-name">Minato Namikaze</h2>
+                    <p class="hokage-title">Fourth Hokage (四代目火影)</p>
+                    <div class="hokage-stats">
+                        <div class="stat">
+                            <strong>Era</strong>
+                            <p>Third Ninja War</p>
+                        </div>
+                        <div class="stat">
+                            <strong>Status</strong>
+                            <p>Deceased</p>
+                        </div>
+                    </div>
+                    <ul class="abilities">
+                        <li>Flying Thunder God Technique</li>
+                        <li>Rasengan Creator</li>
+                        <li>Space-Time Ninjutsu</li>
+                        <li>Exceptional Speed and Reflexes</li>
+                    </ul>
+                    <div class="legacy">
+                        <p>Known as "The Yellow Flash" for his unmatched speed. Sacrificed his life to save the village from the Nine-Tails and protect his son, Naruto.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fifth Hokage -->
+            <div class="hokage-card">
+                <img src="data:image/webp;base64,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" alt="Tsunade Senju" class="hokage-image">
+                <div class="hokage-info">
+                    <h2 class="hokage-name">Tsunade Senju</h2>
+                    <p class="hokage-title">Fifth Hokage (五代目火影)</p>
+                    <div class="hokage-stats">
+                        <div class="stat">
+                            <strong>Era</strong>
+                            <p>Post-Orochimaru</p>
+                        </div>
+                        <div class="stat">
+                            <strong>Status</strong>
+                            <p>Alive</p>
+                        </div>
+                    </div>
+                    <ul class="abilities">
+                        <li>Superhuman Strength</li>
+                        <li>Creation Rebirth Technique</li>
+                        <li>Master Medical Ninjutsu</li>
+                        <li>Summoning: Katsuyu</li>
+                    </ul>
+                    <div class="legacy">
+                        <p>Legendary medical ninja and one of the Sannin. Revolutionized medical ninja practices and led the village through the Fourth Great Ninja War.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sixth Hokage -->
+            <div class="hokage-card">
+                <img src="https://wallpapercat.com/w/full/1/5/e/732974-3840x2160-desktop-4k-hatake-kakashi-wallpaper-photo.jpg" alt="Kakashi Hatake" class="hokage-image">
+                <div class="hokage-info">
+                    <h2 class="hokage-name">Kakashi Hatake</h2>
+                    <p class="hokage-title">Sixth Hokage (六代目火影)</p>
+                    <div class="hokage-stats">
+                        <div class="stat">
+                            <strong>Era</strong>
+                            <p>Post-War</p>
+                        </div>
+                        <div class="stat">
+                            <strong>Status</strong>
+                            <p>Alive</p>
+                        </div>
+                    </div>
+                    <ul class="abilities">
+                        <li>Former Sharingan Master</li>
+                        <li>Master of 1000+ Jutsu</li>
+                        <li>Lightning Release Expert</li>
+                        <li>Exceptional Strategic Mind</li>
+                    </ul>
+                    <div class="legacy">
+                        <p>Former ANBU captain and sensei to Team 7. Led the village into an era of peace and technological advancement after the Fourth Great Ninja War.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seventh Hokage -->
+            <div class="hokage-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtLHK481A1RmVRd2dvubjkDPwvjdApLlWrbHdRJKpJW8IsuYQwSlKEjRY&s" alt="Naruto Uzumaki" class="hokage-image">
+                <div class="hokage-info">
+                    <h2 class="hokage-name">Naruto Uzumaki</h2>
+                    <p class="hokage-title">Seventh Hokage (七代目火影)</p>
+                    <div class="hokage-stats">
+                        <div class="stat">
+                            <strong>Era</strong>
+                            <p>Modern</p>
+                        </div>
+                        <div class="stat">
+                            <strong>Status</strong>
+                            <p>Active</p>
+                        </div>
+                    </div>
+                    <ul class="abilities">
+                        <li>Nine-Tails Jinchūriki</li>
+                        <li>Sage Mode Master</li>
+                        <li>Six Paths Sage Mode</li>
+                        <li>Rasengan and Variants</li>
+                    </ul>
+                    <div class="legacy">
+                        <p>The hero of the Fourth Great Ninja War who achieved his childhood dream. Continues to protect the village while fostering international peace and cooperation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>developed by <b><u>master shresth kumar sharma</u></b></p>
+        </div>
+    </footer>
+
+    <script>
+        // Add pulsing fire symbol effect
+        document.addEventListener('mousemove', (e) => {
+            const symbols = document.querySelectorAll('.fire-symbol');
+            symbols.forEach((symbol, index) => {
+                const speed = 0.05 - (index * 0.01);
+                const x = e.clientX * speed;
+                const y = e.clientY * speed;
+                symbol.style.transform = `translate(${x}px, ${y}px)`;
+            });
+        });
+    </script>
+</body>
+</html> 

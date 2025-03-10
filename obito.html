@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obito Uchiha - The Masked Man</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #1a1a1a, #2c3e50);
+            color: white;
+            min-height: 100vh;
+        }
+
+        .sharingan-effect {
+            position: fixed;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            filter: blur(30px);
+            z-index: -1;
+            opacity: 0.3;
+            animation: pulse 4s infinite;
+        }
+
+        .kamui-effect { background: radial-gradient(circle at center, #7b1fa2, transparent); }
+        .mask-effect { background: radial-gradient(circle at center, #ff5722, transparent); }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.2); opacity: 0.1; }
+            100% { transform: scale(1); opacity: 0.3; }
+        }
+
+        header {
+            background: linear-gradient(135deg, #1a1a1a, #333);
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://wallpaperaccess.com/full/1244824.jpg') center/cover;
+            opacity: 0.2;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-section {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .profile-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .profile-info {
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+        }
+
+        .section {
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(123, 31, 162, 0.5);
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #9c27b0;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #ba68c8;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline-item {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: rgba(156, 39, 176, 0.1);
+            border-radius: 10px;
+            border-left: 4px solid #9c27b0;
+        }
+
+        .abilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .ability-card {
+            padding: 1rem;
+            background: rgba(156, 39, 176, 0.1);
+            border-radius: 10px;
+            border: 1px solid rgba(156, 39, 176, 0.2);
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 1rem;
+            background: rgba(156, 39, 176, 0.1);
+            border-radius: 10px;
+        }
+
+        .quote {
+            font-style: italic;
+            font-size: 1.2rem;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-left: 4px solid #9c27b0;
+        }
+
+        .back-to-home {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(135deg, #333, #1a1a1a);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            margin: 1rem 0;
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .back-to-home:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            background: linear-gradient(135deg, #1a1a1a, #333);
+            color: white;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        @media (max-width: 768px) {
+            .profile-section {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sharingan-effect kamui-effect" style="top: 20%; left: 10%;"></div>
+    <div class="sharingan-effect mask-effect" style="bottom: 30%; right: 20%;"></div>
+
+    <header>
+        <div class="header-bg"></div>
+        <div class="container">
+            <h1>Obito Uchiha</h1>
+            <p>The Man Behind the Mask - None Other Than Tobi</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <a href="index.html" class="back-to-home">← Back to Characters</a>
+
+        <div class="profile-section">
+            <img src="data:image/jpeg;base64,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" class="profile-image">
+            <div class="profile-info">
+                <h2>Profile</h2>
+                <div class="stats">
+                    <div class="stat">
+                        <strong>Status</strong>
+                        <p>Deceased</p>
+                    </div>
+                    <div class="stat">
+                        <strong>Clan</strong>
+                        <p>Uchiha</p>
+                    </div>
+                    <div class="stat">
+                        <strong>Aliases</strong>
+                        <p>Tobi, Madara</p>
+                    </div>
+                </div>
+                <div class="quote">
+                    "In this world, wherever there is light, there are also shadows. As long as the concept of winners exists, there must also be losers. The selfish desire of wanting to maintain peace causes wars, and hatred is born to protect love."
+                </div>
+                <p>Obito Uchiha was a member of Konohagakure's Uchiha clan. He was believed to have died during the Third Shinobi World War, but survived with the help of Madara Uchiha. Disillusioned by the world's cruelty, he became a key figure in the Akatsuki organization.</p>
+            </div>
+        </div>
+
+        <section class="section">
+            <h2>Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Early Life</h3>
+                    <p>A cheerful ninja who dreamed of becoming Hokage and was deeply in love with his teammate Rin Nohara.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Kannabi Bridge Mission</h3>
+                    <p>Nearly died saving Kakashi, was saved by Madara Uchiha, and witnessed Rin's death, leading to his transformation.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Masked Man Period</h3>
+                    <p>Operated under the alias "Tobi" and manipulated events from the shadows, including the Nine-Tails' attack on Konoha.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Fourth Great Ninja War</h3>
+                    <p>Led the war as the leader of Akatsuki, later redeemed himself and sacrificed his life to save the world.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Abilities</h2>
+            <div class="abilities-grid">
+                <div class="ability-card">
+                    <h3>Sharingan</h3>
+                    <ul>
+                        <li>Genjutsu Mastery</li>
+                        <li>Enhanced Perception</li>
+                        <li>Copying Techniques</li>
+                        <li>Predictive Abilities</li>
+                    </ul>
+                </div>
+                <div class="ability-card">
+                    <h3>Mangekyō Sharingan</h3>
+                    <ul>
+                        <li>Kamui</li>
+                        <li>Intangibility</li>
+                        <li>Dimensional Travel</li>
+                        <li>Space-Time Ninjutsu</li>
+                    </ul>
+                </div>
+                <div class="ability-card">
+                    <h3>Rinnegan</h3>
+                    <ul>
+                        <li>Six Paths Techniques</li>
+                        <li>Truth-Seeking Balls</li>
+                        <li>Yin-Yang Release</li>
+                        <li>Enhanced Abilities</li>
+                    </ul>
+                </div>
+                <div class="ability-card">
+                    <h3>Other Skills</h3>
+                    <ul>
+                        <li>Wood Style</li>
+                        <li>Fire Style</li>
+                        <li>Regeneration</li>
+                        <li>Master Manipulator</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Impact on the Story</h2>
+            <div class="abilities-grid">
+                <div class="ability-card">
+                    <h3>Nine-Tails Attack</h3>
+                    <p>Orchestrated the Nine-Tails' attack on Konoha, leading to the death of the Fourth Hokage and his wife.</p>
+                </div>
+                <div class="ability-card">
+                    <h3>Akatsuki Leadership</h3>
+                    <p>Led the Akatsuki from the shadows, manipulating events to achieve the Eye of the Moon Plan.</p>
+                </div>
+                <div class="ability-card">
+                    <h3>Fourth Great Ninja War</h3>
+                    <p>Initiated and led the Fourth Great Ninja War, uniting the ninja world against a common enemy.</p>
+                </div>
+                <div class="ability-card">
+                    <h3>Final Redemption</h3>
+                    <p>Helped save the world by assisting Naruto and Sasuke against Kaguya, sacrificing himself in the process.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Relationships</h2>
+            <div class="abilities-grid">
+                <div class="ability-card">
+                    <h3>Rin Nohara</h3>
+                    <p>His love for Rin and her death were the catalysts for his descent into darkness.</p>
+                </div>
+                <div class="ability-card">
+                    <h3>Kakashi Hatake</h3>
+                    <p>Former teammate turned rival, later reconciled during the Fourth Great Ninja War.</p>
+                </div>
+                <div class="ability-card">
+                    <h3>Madara Uchiha</h3>
+                    <p>Mentor and manipulator who saved his life and shaped his worldview.</p>
+                </div>
+                <div class="ability-card">
+                    <h3>Naruto Uzumaki</h3>
+                    <p>Initially his enemy, later saw in Naruto the hope he had lost and helped save the world.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>developed by <b><u>master shresth kumar sharma</u></b></p>
+        </div>
+    </footer>
+
+    <script>
+        // Add floating effect
+        document.addEventListener('mousemove', (e) => {
+            const effects = document.querySelectorAll('.sharingan-effect');
+            effects.forEach((effect, index) => {
+                const speed = 0.05 - (index * 0.01);
+                const x = e.clientX * speed;
+                const y = e.clientY * speed;
+                effect.style.transform = `translate(${x}px, ${y}px)`;
+            });
+        });
+    </script>
+</body>
+</html> 
